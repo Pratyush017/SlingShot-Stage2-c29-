@@ -5,7 +5,7 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 
-var ball, slingShot,platform;
+var ball, slingShot,platform,platform2;
 
 
 function setup(){
@@ -29,13 +29,13 @@ function setup(){
     box14 = new Bo(750,300,57,57);
     box15 = new Boxes(700,250,53,53);
     
-
+    platform2 = new Platform(200,600,200,300);
     platform = new Platform(700,500,500,10);
     ground = new Ground(600,height,1200,20);
     ball = new Ball(100,100);
     
     //log6 = new Log(230,180,80, PI/2);
-    sling = new SlingShot(ball.body,{x:200,y:300});
+    sling = new SlingShot(ball.body,{x:180,y:290});
 }
 
 function draw(){
@@ -43,7 +43,7 @@ function draw(){
     Engine.update(engine);
     strokeWeight(4);
    
-    
+    platform2.display();
     platform.display();
     ground.display();
     ball.display();
